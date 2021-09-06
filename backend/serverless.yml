@@ -1,0 +1,31 @@
+service: mern-stack
+
+plugins:
+  - serverless-offline
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  memorySize: 1024
+  timeout: 20
+  stage: ${opt:stage, 'develop'}
+  region: us-east-1
+
+functions:
+  producer:
+    handler: src/lambda/handler.handler
+    events:
+      - http:
+          path: /
+          method: ANY
+          allowCredentials: false
+      - http:
+          path: /{proxy+}
+          method: ANY
+          allowCredentials: false
+    environment:
+      NODE_ENV: aws_lambda_${opt:stage, 'develop'}
+      HOSTDB:
+      USER:
+      PASSWORD:
+      DB_NAME:

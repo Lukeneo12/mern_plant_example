@@ -1,0 +1,35 @@
+{
+    "name": "plantstracker",
+    "version": "1.0.0-alpha",
+    "description": "Backend for CRUD of tracking plants",
+    "main": "src/index.js",
+    "scripts": {
+        "start": "node src/index.js",
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "lint": "eslint src/",
+        "lint-fix": "eslint src/ --fix"
+    },
+    "keywords": [
+        "plants",
+        "tracker",
+        "nodejs",
+        "serverless"
+    ],
+    "author": "Lucas Gabriel Donadio",
+    "license": "MIT",
+    "dependencies": {
+        "body-parser": "^1.19.0",
+        "cors": "^2.8.5",
+        "express": "^4.17.1",
+        "mongodb": "^4.1.1",
+        "serverless-http": "^2.7.0",
+        "uuid": "^8.3.2",
+        "winston": "^3.3.3"
+    },
+    "devDependencies": {
+        "eslint": "^7.32.0",
+        "eslint-config-google": "^0.14.0",
+        "serverless": "^1.59.3",
+        "serverless-offline": "^8.0.0"
+    }
+}
